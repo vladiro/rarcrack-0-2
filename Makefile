@@ -3,7 +3,7 @@ PREFIX=/usr
 DOCDIR=${PREFIX}/share/doc/rarcrack
 
 all:
-	${CC} -pthread rarcrack.c `xml2-config --libs --cflags` -O2 -o rarcrack
+	${CC} -std=c99 -pthread rarcrack.c `xml2-config --libs --cflags` -O2 -o rarcrack
 clean:
 	-rm *.o rarcrack
 install:
@@ -13,4 +13,3 @@ install:
 	install -m 644 -t ${DOCDIR} CHANGELOG LICENSE README README.html RELEASE_NOTES
 uninstall:
 	-rm ${PREFIX}/bin/rarcrack
-
